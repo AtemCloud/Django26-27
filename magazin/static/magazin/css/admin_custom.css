@@ -1,0 +1,82 @@
+/* Lab 4: stilizarea paginii de administrare, cu aceleasi culori si font ca magazinul (stil.css, nav.css):
+   antet inchis #1a202c, accent albastru #2b6cb0, chenare #e2e8f0, text #1a202c. Doar tema luminoasa. */
+html[data-theme="light"], :root {
+    --primary: #2b6cb0;
+    --secondary: #1a202c;
+    --accent: #ffffff;
+    --primary-fg: #ffffff;
+
+    --body-fg: #1a202c;
+    --body-bg: #ffffff;
+    --body-quiet-color: #718096;
+    --body-medium-color: #4a5568;
+    --body-loud-color: #1a202c;
+
+    --header-color: #e2e8f0;
+    --header-branding-color: #ffffff;
+    --header-bg: #1a202c;
+    --header-link-color: #ffffff;
+
+    --breadcrumbs-fg: #cbd5e0;
+    --breadcrumbs-link-fg: #ffffff;
+    --breadcrumbs-bg: #2d3748;
+
+    --link-fg: #2b6cb0;
+    --link-hover-color: #1a365d;
+    --link-selected-fg: #1a202c;
+
+    --hairline-color: #e2e8f0;
+    --border-color: #cbd5e0;
+
+    --error-fg: #c53030;
+
+    --message-debug-bg: #f7fafc;
+    --message-info-bg: #ebf8ff;
+    --message-success-bg: #f0fff4;
+    --message-warning-bg: #fffaf0;
+    --message-error-bg: #fff5f5;
+
+    --darkened-bg: #f7fafc;
+    --selected-bg: #e2e8f0;
+    --selected-row: #ebf8ff;
+
+    --button-fg: #ffffff;
+    --button-bg: #2b6cb0;
+    --button-hover-bg: #2c5282;
+    --default-button-bg: #2c5282;
+    --default-button-hover-bg: #2b6cb0;
+    --close-button-bg: #718096;
+    --close-button-hover-bg: #4a5568;
+    --delete-button-bg: #c53030;
+    --delete-button-hover-bg: #9b2c2c;
+
+    --object-tools-fg: #ffffff;
+    --object-tools-bg: #718096;
+    --object-tools-hover-bg: #4a5568;
+
+    --font-family-primary: "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    color-scheme: only light;
+}
+/* butonul de schimbare a temei nu mai are rost: exista o singura tema */
+.theme-toggle { display: none; }
+#header { color: var(--header-color); }
+#site-name a { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.admin-logo { height: 34px; }
+/* bara laterala si casetele de pe prima pagina: titluri albe pe albastru, randuri pe alb */
+#nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited { color: #ffffff; }
+#nav-sidebar .current-model { background: var(--selected-row); }
+/* toate titlurile de sectiune (prima pagina, formulare, istoric preturi) in albastru, ca in bara laterala.
+   #content le da prioritate fata de forms.css, care se incarca dupa acest fisier */
+#nav-sidebar .module caption, #content .module h2, #content .module caption, #content .inline-group h2,
+#content fieldset .fieldset-heading, #content fieldset .inline-heading,
+#content :not(.inline-related) .collapse summary { background: var(--primary); border-color: var(--primary); color: #ffffff; }
+.selector-chosen-title { background: var(--primary); border-color: var(--primary); }
+#result_list tr.selected td, #result_list tr.selected th { background: var(--selected-row); }
+/* campurile de fisier, cu text in romana (js/fisier.js, acelasi ca in magazin) */
+.fisier-ascuns { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.fisier { display: inline-flex; align-items: center; gap: 8px; }
+.alege-fisier { background: var(--button-bg); color: #ffffff; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+.alege-fisier:hover { background: var(--button-hover-bg); }
+.fisier-ascuns:focus-visible + .fisier .alege-fisier { outline: 2px solid var(--primary); outline-offset: 2px; }
+.nume-fisier { color: var(--body-quiet-color); }

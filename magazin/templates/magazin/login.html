@@ -1,0 +1,17 @@
+{% extends "magazin/baza.html" %}
+{% block title %}Autentificare{% endblock %}
+{% block content %}
+<h1>Autentificare</h1>
+{# Lab 6 / Curs 6: formularul de login personalizat (forms.CustomAuthenticationForm), cu checkbox-ul ramane_logat #}
+<div class="login-zona">
+<form method="post" class="formular">
+    {% csrf_token %}
+    {% for error in form.non_field_errors %}<p class="eroare-form">{{ error }}</p>{% endfor %}
+    {% include "magazin/_camp.html" with field=form.username %}
+    {% include "magazin/_camp.html" with field=form.password %}
+    {% include "magazin/_camp.html" with field=form.ramane_logat %}
+    <button type="submit" class="buton">Login</button>
+    <p>Nu ai cont? <a href="{% url 'inregistrare' %}">Inregistreaza-te</a></p>
+</form>
+</div>
+{% endblock %}

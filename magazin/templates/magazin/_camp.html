@@ -1,0 +1,19 @@
+{# un camp de formular, ca in Curs 5 ("Iterarea prin campurile unui formular"): eticheta, inputul, erorile si help_text-ul #}
+<div class="camp{% if field.errors %} cu-eroare{% endif %}{% if field.field.required %} obligatoriu{% endif %}" id="camp-{{ field.name }}">
+    {% if field.widget_type == 'checkbox' %}
+        <label>{{ field }} {{ field.label }}</label>
+    {% else %}
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+    {% endif %}
+    {% if field.errors %}
+        <div class="error">
+            {% for error in field.errors %}
+                <p class="eroare-camp">{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if field.help_text %}
+        <small class="ajutor">{{ field.help_text|safe }}</small>
+    {% endif %}
+</div>

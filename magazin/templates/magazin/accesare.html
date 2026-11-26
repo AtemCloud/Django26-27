@@ -1,0 +1,7 @@
+{% extends "magazin/baza.html" %}
+{# Lab 2: /accesare[id], toate proprietatile unei accesari #}
+{% block title %}Accesarea {{ a.id }}{% endblock %}
+{% block content %}
+<h1>Accesarea #{{ a.id }}</h1>
+<dl class="detalii">{% for k, v in proprietati.items %}<dt>{{ k }}</dt><dd>{{ v }}</dd>{% endfor %}</dl>
+{% endblock %}

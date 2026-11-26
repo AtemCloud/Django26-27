@@ -1,0 +1,99 @@
+{% load static %}{# Lab 2: template-ul de baza (header, main, footer); toate paginile il extind #}<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# site-ul are o singura tema (deschisa); browserele cu "dark mode fortat" sau extensia Dark Reader nu o mai intuneca pe jumatate #}
+    <meta name="color-scheme" content="only light">
+    <meta name="darkreader-lock">
+    <title>{% block title %}Magazin Hardware{% endblock %} | {{ firma.nume }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    {# Lab 2: resursele statice sunt generate cu {% static %} si impartite pe subfoldere (css, js, imagini) #}
+    <link rel="stylesheet" href="{% static 'magazin/css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'magazin/css/stil.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<header>
+    <a class="sigla" href="{% url 'index' %}"><img src="{% static 'magazin/imagini/logo.png' %}" alt="logo"> Magazin Hardware</a>
+    <input type="checkbox" id="meniu-toggle"><label for="meniu-toggle" class="meniu-buton"><i class="fa-solid fa-bars"></i></label>
+    {# Lab 2: meniu cu submeniuri (derulant din nav.css), linkuri generate cu {% url %} #}
+    <nav>
+        <ul class="meniu">
+            <li><a href="{% url 'index' %}">Acasa</a>
+                {# Lab 2: submeniu cu linkuri catre sectiuni din pagina principala #}
+                <ul>
+                    <li><a href="{% url 'index' %}#despre-noi">Despre noi pe scurt</a></li>
+                    <li><a href="{% url 'index' %}#program">Program</a></li>
+                    <li><a href="{% url 'index' %}#noutati">Noutati</a></li>
+                    <li><a href="{% url 'index' %}#blog">Blog</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'produse' %}">Produse</a>
+                <ul>
+                    <li><a href="{% url 'produse' %}">Toate produsele</a></li>
+                    <li><a href="{% url 'adauga_produs' %}">Adauga produs</a></li>
+                </ul>
+            </li>
+            {# Lab 4: categoriile sunt generate din baza de date (context_processors.categorii_meniu), doar cele cu produse #}
+            <li><a href="#">Categorii</a>
+                <ul>
+                    {% for c in categorii_meniu %}
+                    <li><a href="{{ c.get_absolute_url }}"><i class="{{ c.sigla }}" style="color:{{ c.culoare }}"></i> {{ c.nume }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li><a href="{% url 'despre' %}">Despre</a>
+                <ul>
+                    <li><a href="{% url 'despre' %}#misiune">Misiune</a></li>
+                    <li><a href="{% url 'despre' %}#echipa">Echipa</a></li>
+                    <li><a href="{% url 'istoric' %}">Istoric</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'cos_virtual' %}"><i class="fa-solid fa-cart-shopping"></i> Cos</a></li>
+            <li><a href="#">Server</a>
+                <ul>
+                    <li><a href="{% url 'info' %}">Info server</a></li>
+                    <li><a href="{% url 'log' %}">Log accesari</a></li>
+                    <li><a href="{% url 'mesaje' %}">Mesaje contact</a></li>
+                </ul>
+            </li>
+            {# Lab 6: logout doar pentru utilizatorii logati, login/inregistrare pentru restul #}
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profil' %}"><i class="fa-solid fa-user"></i> {{ user.username }}</a>
+                <ul>
+                    <li><a href="{% url 'profil' %}">Profil</a></li>
+                    <li><a href="{% url 'logout' %}">Deconectare</a></li>
+                </ul>
+            </li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Autentificare</a>
+                <ul><li><a href="{% url 'inregistrare' %}">Inregistrare</a></li></ul>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+{# Lab 5 Task 1 / Curs 5: afisarea mesajelor; message.tags (din MESSAGE_TAGS) da clasa CSS, deci fiecare tip are stilul lui in stil.css #}
+{% if messages %}
+    <ul class="mesaje">
+        {% for message in messages %}
+            <li class="mesaj mesaj-{{ message.tags }}"><i class="icon"></i>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<main>{% block content %}{% endblock %}</main>
+
+{# Lab 2: footer cu datele firmei (context processor) si IP-ul utilizatorului (middleware) #}
+<footer>
+    <p>&copy; {% now "Y" %} {{ firma.nume }} (din {{ firma.an_infiintare }}) &middot; CUI {{ firma.cui }}</p>
+    <p>{{ firma.adresa }} &middot; Tel. {{ firma.telefon }} &middot; {{ firma.program }}</p>
+    <p class="ip">IP-ul tau: {{ request.ip_client }}</p>
+</footer>
+<script src="{% static 'magazin/js/fisier.js' %}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

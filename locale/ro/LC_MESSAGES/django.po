@@ -1,0 +1,403 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: magazin-hardware\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
+msgstr "Țineți apăsat „Control” (sau „Command” pe Mac) pentru a selecta mai multe."
+
+msgid "Select this object for an action - {}"
+msgstr "Selectați acest obiect pentru o acțiune - {}"
+
+msgid "The app \"%s\" could not be found."
+msgstr "Aplicația „%s” nu a fost găsită."
+
+msgid "The %(name)s “%(obj)s” was deleted successfully."
+msgstr "%(name)s „%(obj)s” a fost șters cu succes."
+
+msgid "%(name)s with ID “%(key)s” doesn’t exist. Perhaps it was deleted?"
+msgstr "%(name)s cu ID-ul „%(key)s” nu există. Poate a fost șters?"
+
+msgid ", "
+msgstr ", "
+
+msgid "…and %(count)d more object."
+msgid_plural "…and %(count)d more objects."
+msgstr[0] "…și încă %(count)d obiect."
+msgstr[1] "…și încă %(count)d obiecte."
+msgstr[2] "…și încă %(count)d de obiecte."
+
+msgid "There’s been an error. It’s been reported to the site administrators via email and should be fixed shortly. Thanks for your patience."
+msgstr "A apărut o eroare. A fost raportată administratorilor site-ului prin e-mail și va fi remediată în curând. Vă mulțumim pentru răbdare."
+
+msgid "Run"
+msgstr "Execută"
+
+msgid "Breadcrumbs"
+msgstr "Cale de navigare"
+
+msgid "Model name"
+msgstr "Nume model"
+
+msgid "Add link"
+msgstr "Link de adăugare"
+
+msgid "Change or view list link"
+msgstr "Link către listă (modificare sau vizualizare)"
+
+msgid "You don’t have permission to view or edit anything."
+msgstr "Nu aveți permisiunea de a vizualiza sau modifica nimic."
+
+msgid "After you’ve created a user, you’ll be able to edit more user options."
+msgstr "După ce creați utilizatorul, veți putea modifica mai multe opțiuni ale acestuia."
+
+msgid "Error:"
+msgstr "Eroare:"
+
+msgid "Set password"
+msgstr "Setează parola"
+
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Vă rugăm să corectați eroarea de mai jos."
+msgstr[1] "Vă rugăm să corectați erorile de mai jos."
+msgstr[2] "Vă rugăm să corectați erorile de mai jos."
+
+msgid "This action will <strong>enable</strong> password-based authentication for this user."
+msgstr "Această acțiune va <strong>activa</strong> autentificarea cu parolă pentru acest utilizator."
+
+msgid "Disable password-based authentication"
+msgstr "Dezactivează autentificarea cu parolă"
+
+msgid "Enable password-based authentication"
+msgstr "Activează autentificarea cu parolă"
+
+msgid "Skip to main content"
+msgstr "Sari la conținutul principal"
+
+msgid "Hide counts"
+msgstr "Ascunde numărul de rezultate"
+
+msgid "Show counts"
+msgstr "Arată numărul de rezultate"
+
+msgid "Toggle theme (current theme: auto)"
+msgstr "Schimbă tema (tema curentă: automată)"
+
+msgid "Toggle theme (current theme: light)"
+msgstr "Schimbă tema (tema curentă: luminoasă)"
+
+msgid "Toggle theme (current theme: dark)"
+msgstr "Schimbă tema (tema curentă: întunecată)"
+
+msgid "Filter by %(field_name)s"
+msgstr "Filtrează după %(field_name)s"
+
+msgid "Deleting the %(object_name)s “%(escaped_object)s” would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgstr "Ștergerea obiectului %(object_name)s „%(escaped_object)s” ar duce la ștergerea obiectelor asociate, dar contul dumneavoastră nu are permisiunea de a șterge următoarele tipuri de obiecte:"
+
+msgid "Deleting the %(object_name)s “%(escaped_object)s” would require deleting the following protected related objects:"
+msgstr "Ștergerea obiectului %(object_name)s „%(escaped_object)s” ar necesita ștergerea următoarelor obiecte asociate protejate:"
+
+msgid "Are you sure you want to delete the %(object_name)s “%(escaped_object)s”? All of the following related items will be deleted:"
+msgstr "Sigur doriți să ștergeți obiectul %(object_name)s „%(escaped_object)s”? Toate elementele asociate de mai jos vor fi șterse:"
+
+msgid "Added:"
+msgstr "Adăugate:"
+
+msgid "Changed:"
+msgstr "Modificate:"
+
+msgid "Deleted:"
+msgstr "Șterse:"
+
+msgid "Something’s wrong with your database installation. Make sure the appropriate database tables have been created, and make sure the database is readable by the appropriate user."
+msgstr "Ceva nu este în regulă cu instalarea bazei de date. Verificați dacă tabelele necesare au fost create și dacă baza de date poate fi citită de utilizatorul corespunzător."
+
+msgid "Forgotten your login credentials?"
+msgstr "Ați uitat datele de autentificare?"
+
+msgid "Sidebar"
+msgstr "Bară laterală"
+
+msgid "Filter navigation items"
+msgstr "Filtrează elementele din meniu"
+
+msgid "Pagination %(name)s entries"
+msgstr "Paginarea înregistrărilor %(name)s"
+
+msgid "entry"
+msgid_plural "entries"
+msgstr[0] "înregistrare"
+msgstr[1] "înregistrări"
+msgstr[2] "de înregistrări"
+
+msgid "This object doesn’t have a change history. It probably wasn’t added via this admin site."
+msgstr "Acest obiect nu are un istoric al modificărilor. Probabil nu a fost adăugat prin acest site de administrare."
+
+msgid "Pagination %(name)s"
+msgstr "Paginare %(name)s"
+
+msgid "Search %(name)s"
+msgstr "Caută în %(name)s"
+
+msgid "View selected %(model)s"
+msgstr "Vezi %(model)s selectat"
+
+msgid "Logout"
+msgstr "Deconectare"
+
+msgid "Thanks for spending some quality time with the web site today."
+msgstr "Vă mulțumim pentru timpul petrecut astăzi pe site."
+
+msgid "In case you’ve forgotten, you are:"
+msgstr "În caz că ați uitat, sunteți:"
+
+msgid "Select all objects on this page for an action"
+msgstr "Selectați toate obiectele de pe această pagină pentru o acțiune"
+
+msgid "Algerian Arabic"
+msgstr "Arabă algeriană"
+
+msgid "Central Kurdish (Sorani)"
+msgstr "Kurdă centrală (sorani)"
+
+msgid "Haitian Creole"
+msgstr "Creolă haitiană"
+
+msgid "Igbo"
+msgstr "Igbo"
+
+msgid "Kyrgyz"
+msgstr "Kârgâză"
+
+msgid "Malay"
+msgstr "Malaeză"
+
+msgid "Tajik"
+msgstr "Tadjică"
+
+msgid "Turkmen"
+msgstr "Turkmenă"
+
+msgid "Uyghur"
+msgstr "Uigură"
+
+msgid "…"
+msgstr "…"
+
+msgid "Enter a valid domain name."
+msgstr "Introduceți un nume de domeniu valid."
+
+msgid "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or hyphens."
+msgstr "Introduceți un „slug” valid, format din litere Unicode, cifre, liniuțe de subliniere sau cratime."
+
+msgid "Enter a valid %(protocol)s address."
+msgstr "Introduceți o adresă %(protocol)s validă."
+
+msgid "IPv4"
+msgstr "IPv4"
+
+msgid "IPv6"
+msgstr "IPv6"
+
+msgid "IPv4 or IPv6"
+msgstr "IPv4 sau IPv6"
+
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr "Asigurați-vă că această valoare este un multiplu al pasului %(limit_value)s."
+
+msgid "Ensure this value is a multiple of step size %(limit_value)s, starting from %(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr "Asigurați-vă că această valoare este un multiplu al pasului %(limit_value)s, pornind de la %(offset)s, de exemplu %(offset)s, %(valid_value1)s, %(valid_value2)s și așa mai departe."
+
+msgid "File extension “%(extension)s” is not allowed. Allowed extensions are: %(allowed_extensions)s."
+msgstr "Extensia de fișier „%(extension)s” nu este permisă. Extensiile permise sunt: %(allowed_extensions)s."
+
+msgid "Constraint “%(name)s” is violated."
+msgstr "Constrângerea „%(name)s” nu este respectată."
+
+msgid "- Select an option -"
+msgstr "- Alegeți o opțiune -"
+
+msgid "“%(value)s” value must be either True or False."
+msgstr "Valoarea „%(value)s” trebuie să fie True sau False."
+
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "Valoarea „%(value)s” trebuie să fie True, False sau None."
+
+msgid "String (unlimited)"
+msgstr "Șir de caractere (nelimitat)"
+
+msgid "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD format."
+msgstr "Valoarea „%(value)s” are un format de dată invalid. Trebuie să fie în formatul AAAA-LL-ZZ."
+
+msgid "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid date."
+msgstr "Valoarea „%(value)s” are formatul corect (AAAA-LL-ZZ), dar este o dată invalidă."
+
+msgid "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr "Valoarea „%(value)s” are un format invalid. Trebuie să fie în formatul AAAA-LL-ZZ HH:MM[:ss[.uuuuuu]][TZ]."
+
+msgid "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr "Valoarea „%(value)s” are formatul corect (AAAA-LL-ZZ HH:MM[:ss[.uuuuuu]][TZ]), dar este o dată/oră invalidă."
+
+msgid "“%(value)s” value must be a decimal number."
+msgstr "Valoarea „%(value)s” trebuie să fie un număr zecimal."
+
+msgid "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[.uuuuuu] format."
+msgstr "Valoarea „%(value)s” are un format invalid. Trebuie să fie în formatul [ZZ] [[HH:]MM:]ss[.uuuuuu]."
+
+msgid "“%(value)s” value must be a float."
+msgstr "Valoarea „%(value)s” trebuie să fie un număr real."
+
+msgid "“%(value)s” value must be an integer."
+msgstr "Valoarea „%(value)s” trebuie să fie un număr întreg."
+
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "Valoarea „%(value)s” trebuie să fie None, True sau False."
+
+msgid "Positive big integer"
+msgstr "Număr întreg mare pozitiv"
+
+msgid "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] format."
+msgstr "Valoarea „%(value)s” are un format invalid. Trebuie să fie în formatul HH:MM[:ss[.uuuuuu]]."
+
+msgid "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an invalid time."
+msgstr "Valoarea „%(value)s” are formatul corect (HH:MM[:ss[.uuuuuu]]), dar este o oră invalidă."
+
+msgid "“%(value)s” is not a valid binary value."
+msgstr "„%(value)s” nu este o valoare binară validă."
+
+msgid "“%(value)s” is not a valid UUID."
+msgstr "„%(value)s” nu este un UUID valid."
+
+msgid "A JSON object"
+msgstr "Un obiect JSON"
+
+msgid "Value must be valid JSON."
+msgstr "Valoarea trebuie să fie JSON valid."
+
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr "Obiectul %(model)s cu %(field)s %(value)r nu este o opțiune validă."
+
+msgid "Enter a valid JSON."
+msgstr "Introduceți un JSON valid."
+
+msgid "ManagementForm data is missing or has been tampered with. Missing fields: %(field_names)s. You may need to file a bug report if the issue persists."
+msgstr "Datele ManagementForm lipsesc sau au fost modificate. Câmpuri lipsă: %(field_names)s. Dacă problema persistă, raportați o eroare."
+
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] "Trimiteți cel mult %(num)d formular."
+msgstr[1] "Trimiteți cel mult %(num)d formulare."
+msgstr[2] "Trimiteți cel mult %(num)d de formulare."
+
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] "Trimiteți cel puțin %(num)d formular."
+msgstr[1] "Trimiteți cel puțin %(num)d formulare."
+msgstr[2] "Trimiteți cel puțin %(num)d de formulare."
+
+msgid "“%(pk)s” is not a valid value."
+msgstr "„%(pk)s” nu este o valoare validă."
+
+msgid "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it may be ambiguous or it may not exist."
+msgstr "%(datetime)s nu a putut fi interpretată în fusul orar %(current_timezone)s; poate fi ambiguă sau poate să nu existe."
+
+msgid "No %s matches the given query."
+msgstr "Niciun obiect %s nu corespunde căutării."
+
+msgctxt "Task"
+msgid "Ready"
+msgstr "Pregătită"
+
+msgctxt "Task"
+msgid "Running"
+msgstr "În execuție"
+
+msgctxt "Task"
+msgid "Failed"
+msgstr "Eșuată"
+
+msgctxt "Task"
+msgid "Successful"
+msgstr "Reușită"
+
+msgid "You are seeing this message because this HTTPS site requires a “Referer header” to be sent by your web browser, but none was sent. This header is required for security reasons, to ensure that your browser is not being hijacked by third parties."
+msgstr "Vedeți acest mesaj deoarece acest site HTTPS cere ca browserul să trimită un antet „Referer”, dar acesta nu a fost trimis. Antetul este necesar din motive de securitate, pentru a vă asigura că browserul nu este folosit de terți."
+
+msgid "If you have configured your browser to disable “Referer” headers, please re-enable them, at least for this site, or for HTTPS connections, or for “same-origin” requests."
+msgstr "Dacă ați configurat browserul să nu trimită antetele „Referer”, reactivați-le, cel puțin pentru acest site, pentru conexiunile HTTPS sau pentru cererile „same-origin”."
+
+msgid "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or including the “Referrer-Policy: no-referrer” header, please remove them. The CSRF protection requires the “Referer” header to do strict referer checking. If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer\" …> for links to third-party sites."
+msgstr "Dacă folosiți eticheta <meta name=\"referrer\" content=\"no-referrer\"> sau antetul „Referrer-Policy: no-referrer”, eliminați-le. Protecția CSRF are nevoie de antetul „Referer” pentru verificarea strictă. Dacă vă preocupă confidențialitatea, folosiți alternative precum <a rel=\"noreferrer\" …> pentru linkurile către alte site-uri."
+
+msgid "If you have configured your browser to disable cookies, please re-enable them, at least for this site, or for “same-origin” requests."
+msgstr "Dacă ați configurat browserul să blocheze cookie-urile, reactivați-le, cel puțin pentru acest site sau pentru cererile „same-origin”."
+
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Dată invalidă „%(datestr)s” pentru formatul „%(format)s”"
+
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "Pagina nu este „last” și nu poate fi convertită într-un număr întreg."
+
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Lista este goală și „%(class_name)s.allow_empty” este False."
+
+msgid "“%(path)s” does not exist"
+msgstr "„%(path)s” nu există"
+
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Subiecte, referințe și ghiduri"
+
+msgid "Conflicting form data submitted. Please try again."
+msgstr "Formularul a trimis date contradictorii. Încercați din nou."
+
+msgid "Password-based authentication was disabled."
+msgstr "Autentificarea cu parolă a fost dezactivată."
+
+msgid "Set password: %s"
+msgstr "Setează parola: %s"
+
+msgid "Reset password"
+msgstr "Resetează parola"
+
+msgid "Whether the user will be able to authenticate using a password or not. If disabled, they may still be able to authenticate using other backends, such as Single Sign-On or LDAP."
+msgstr "Dacă utilizatorul se poate autentifica folosind o parolă. Dacă este dezactivată, se poate autentifica în continuare prin alte metode, cum ar fi Single Sign-On sau LDAP."
+
+msgid "Password-based authentication"
+msgstr "Autentificare cu parolă"
+
+msgid "Enabled"
+msgstr "Activată"
+
+msgid "Disabled"
+msgstr "Dezactivată"
+
+msgid "Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr "Parolele nu sunt stocate în clar, deci parola utilizatorului nu poate fi văzută."
+
+msgid "Enable password-based authentication for this user by setting a password."
+msgstr "Activați autentificarea cu parolă pentru acest utilizator setând o parolă."
+
+msgid "block size"
+msgstr "dimensiune bloc"
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Această parolă este prea scurtă. Trebuie să conțină cel puțin %d caracter."
+msgstr[1] "Această parolă este prea scurtă. Trebuie să conțină cel puțin %d caractere."
+msgstr[2] "Această parolă este prea scurtă. Trebuie să conțină cel puțin %d de caractere."
+
+msgid "Enter a valid username. This value may contain only unaccented lowercase a-z and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
+msgstr "Introduceți un nume de utilizator valid. Poate conține doar litere fără diacritice (a-z, A-Z), cifre și caracterele @/./+/-/_."
+
+msgid "Content type %(ct_id)s object %(obj_id)s doesn’t exist"
+msgstr "Obiectul %(obj_id)s de tipul de conținut %(ct_id)s nu există"
+
+msgid "%(ct_name)s objects don’t have a get_absolute_url() method"
+msgstr "Obiectele %(ct_name)s nu au metoda get_absolute_url()"

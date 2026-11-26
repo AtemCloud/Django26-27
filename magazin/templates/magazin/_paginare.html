@@ -1,0 +1,7 @@
+{% load magazin_extra %}
+{# Lab 4: pagina X din Y + linkuri anterioara/urmatoare (pastreaza filtrele prin tagul {% qs %}) #}
+<nav class="paginare">
+    {% if pagina.has_previous %}<a href="{% qs pagina=pagina.previous_page_number %}" data-ajax>&laquo; anterioara</a>{% endif %}
+    <span>pagina {{ pagina.number }} din {{ pagina.paginator.num_pages }}</span>
+    {% if pagina.has_next %}<a href="{% qs pagina=pagina.next_page_number %}" data-ajax>urmatoare &raquo;</a>{% endif %}
+</nav>

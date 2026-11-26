@@ -1,0 +1,8 @@
+{% extends "magazin/baza.html" %}
+{# Lab 1: /info; sectiunea de data vine din Accesare.calculeaza_data() #}
+{% block title %}Informații despre server{% endblock %}
+{% block content %}
+<h1>Informații despre server</h1>
+{{ sectiune_data }}
+<p>Variante: <a href="?data=zi">doar data</a> &middot; <a href="?data=timp">doar ora</a> &middot; <a href="?">ambele</a></p>
+{% endblock %}

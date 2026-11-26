@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{# Lab 4: personalizarea admin-ului (titlu tab, sigla, culori la fel ca in magazin) #}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+{# fara tema intunecata: altfel, cu Windows in dark mode, admin-ul amesteca fundaluri deschise cu text deschis #}
+{% block dark-mode-vars %}{% endblock %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'magazin/css/admin_custom.css' %}">{% endblock %}
+{% block extrahead %}{{ block.super }}{# Dark Reader nu mai intuneca admin-ul #}<meta name="darkreader-lock"><script src="{% static 'magazin/js/fisier.js' %}" defer></script>{% endblock %}
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}"><img src="{% static 'magazin/imagini/logo.png' %}" alt="logo" class="admin-logo"> {{ site_header|default:_('Django administration') }}</a></div>
+{% endblock %}
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,18 @@
+{% load static magazin_extra %}
+{# Lab 4: un produs in lista: nume cu link, cateva specificatii, imagine (sau imagine indisponibila), categoria cu culoarea si iconul ei, stoc limitat marcat, taguri ca linkuri de filtrare #}
+<article class="card-produs{% if produs.stoc_limitat %} stoc-limitat{% endif %}" style="--culoare-categ: {{ produs.categorie.culoare }}">
+    <a href="{{ produs.get_absolute_url }}" class="imagine">
+        {% if produs.imagine %}<img src="{{ produs.imagine.url }}" alt="{{ produs.nume }}">
+        {% else %}<img src="{% static 'magazin/imagini/imagine_indisponibila.svg' %}" alt="imagine indisponibila">{% endif %}
+    </a>
+    <a class="categorie-eticheta" href="{{ produs.categorie.get_absolute_url }}"><i class="{{ produs.categorie.sigla }}"></i> {{ produs.categorie.nume }}</a>
+    <h3><a href="{{ produs.get_absolute_url }}">{{ produs.nume }}</a></h3>
+    <p class="pret">{{ produs.pret_curent }} lei</p>
+    <ul class="specificatii">
+        <li>Brand: {{ produs.brand.nume }}</li>
+        <li>Stare: {{ produs.get_stare_display }}</li>
+        {% if produs.consum_w %}<li>Consum: {{ produs.consum_w }} W</li>{% endif %}
+        <li>Stoc: {{ produs.stoc_online }}{% if produs.stoc_limitat %} <span class="badge-stoc"><i class="fa-solid fa-triangle-exclamation"></i> stoc limitat</span>{% endif %}</li>
+    </ul>
+    {% if produs.taguri %}<p class="taguri">{% for t in produs.taguri %}<a href="{% url 'produse' %}{% if request.resolver_match.url_name == 'produse' or request.resolver_match.url_name == 'categorie' %}{% qs_tag t %}{% else %}?tag={{ t|urlencode }}{% endif %}">#{{ t }}</a> {% endfor %}</p>{% endif %}
+</article>

@@ -1,0 +1,33 @@
+{% extends "magazin/baza.html" %}
+{% load static %}
+{# Lab 2: pagina principala, minim 3 sectiuni (despre-noi, program, noutati, blog) + imagine din static #}
+{% block title %}Acasa{% endblock %}
+{% block content %}
+<h1>Magazin Hardware</h1>
+<section id="despre-noi" class="hero">
+    <img src="{% static 'magazin/imagini/magazin.jpg' %}" alt="Componente PC">
+    <div>
+        <h2>Componente PC, alese de pasionati</h2>
+        <p>Vindem procesoare, placi video, memorii, stocare, surse si periferice. Fiecare produs are specificatiile
+        tehnice complete, istoricul pretului si recomandari de produse compatibile, ca sa iti construiesti PC-ul fara surprize.</p>
+        <a class="buton" href="{% url 'produse' %}">Vezi produsele</a>
+    </div>
+</section>
+<section id="program">
+    <h2>Program</h2>
+    <p>{{ firma.program }}</p>
+    <p>Showroom: {{ firma.adresa }}. Service si montaj pe loc, cu programare din pagina de <a href="{% url 'contact' %}">contact</a>.</p>
+</section>
+<section id="noutati">
+    <h2>Noutati</h2>
+    <div class="grila grila-3">
+        {% for p in noutati %}{% include "magazin/_card_produs.html" with produs=p %}{% endfor %}
+    </div>
+</section>
+<section id="blog">
+    <h2>Din blog</h2>
+    {% for a in articole %}
+    <article><h3>{{ a.titlu }}</h3><p class="data">{{ a.data_publicarii|date:"d.m.Y" }}</p><p>{{ a.continut }}</p></article>
+    {% endfor %}
+</section>
+{% endblock %}

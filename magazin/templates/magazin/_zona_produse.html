@@ -1,0 +1,24 @@
+{% load magazin_extra %}
+{# Lab 4: sortare (coloana + a/d), taguri active cu x, paginare care pastreaza parametrii. Lab 5: grila cu 1/2/3 coloane #}
+<div class="bara-sortare">
+    Sorteaza dupa:
+    {% for cheie, eticheta in coloane_sortare.items %}
+        <a href="{% qs coloana=cheie sort='a' %}" data-ajax class="{% if coloana == cheie and sens == 'a' %}activ{% endif %}">{{ eticheta }} &uarr;</a>
+        <a href="{% qs coloana=cheie sort='d' %}" data-ajax class="{% if coloana == cheie and sens == 'd' %}activ{% endif %}">&darr;</a>
+    {% endfor %}
+</div>
+{% if taguri_active %}
+<div class="taguri-active">Taguri active:
+    {% for t in taguri_active %}<a class="tag-activ" data-ajax href="{% qs_tag t 'scoate' %}">{{ t }} <i class="fa-solid fa-xmark"></i></a>{% endfor %}
+</div>
+{% endif %}
+{% if total %}
+{% include "magazin/_paginare.html" %}
+<p class="info-paginare">Se afișează produsele între {{ pagina.start_index }} și {{ pagina.end_index }} din totalul de {{ total }} produse.</p>
+<div class="grila grila-{{ coloane }}">
+    {% for produs in pagina %}{% include "magazin/_card_produs.html" %}{% endfor %}
+</div>
+{% include "magazin/_paginare.html" %}
+{% else %}
+<p class="gol">Nu exista produse pentru criteriile alese.</p>
+{% endif %}

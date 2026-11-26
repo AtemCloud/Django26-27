@@ -1,0 +1,11 @@
+{% extends "magazin/baza.html" %}
+{# Lab 5 Task 4: formularul ModelForm de adaugare produse #}
+{% block title %}Adauga produs{% endblock %}
+{% block content %}
+<h1>Adauga produs</h1>
+<form method="post" enctype="multipart/form-data" class="formular">
+    {% csrf_token %}
+    {% include "magazin/_form.html" %}
+    <button type="submit" class="buton">Salveaza</button>
+</form>
+{% endblock %}

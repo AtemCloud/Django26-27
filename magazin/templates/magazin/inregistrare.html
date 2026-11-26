@@ -1,0 +1,17 @@
+{% extends "magazin/baza.html" %}
+{# Lab 6: inregistrare; campurile din Profil sunt intr-un fieldset separat, optionale #}
+{% block title %}Inregistrare{% endblock %}
+{% block content %}
+<h1>Creeaza cont</h1>
+<form method="post" class="formular">
+    {% csrf_token %}
+    {% for e in form.non_field_errors %}<p class="eroare-form">{{ e }}</p>{% endfor %}
+    <fieldset><legend>Date cont</legend>
+        {% for field in form %}{% if field.name not in form.CAMPURI_PROFIL %}{% include "magazin/_camp.html" %}{% endif %}{% endfor %}
+    </fieldset>
+    <fieldset><legend>Profil (optional)</legend>
+        {% for field in form %}{% if field.name in form.CAMPURI_PROFIL %}{% include "magazin/_camp.html" %}{% endif %}{% endfor %}
+    </fieldset>
+    <button type="submit" class="buton">Inregistrare</button>
+</form>
+{% endblock %}

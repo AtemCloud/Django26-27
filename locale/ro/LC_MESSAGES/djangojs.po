@@ -1,0 +1,184 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: magazin-hardware\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+msgid "Available %s"
+msgstr "%s disponibile"
+
+msgid "Choose %s by selecting them and then select the \"Choose\" arrow button."
+msgstr "Alegeți %s selectându-le, apoi apăsați săgeata „Alege”."
+
+msgid "Choose all %s"
+msgstr "Alege toate (%s)"
+
+msgid "Choose selected %s"
+msgstr "Adaugă %s selectate"
+
+msgid "Remove selected %s"
+msgstr "Elimină %s selectate"
+
+msgid "Remove %s by selecting them and then select the \"Remove\" arrow button."
+msgstr "Eliminați %s selectându-le, apoi apăsați săgeata „Elimină”."
+
+msgid "Type into this box to filter down the list of selected %s."
+msgstr "Scrieți în această casetă pentru a filtra lista de %s selectate."
+
+msgid "(click to clear)"
+msgstr "(click pentru a goli)"
+
+msgid "Remove all %s"
+msgstr "Elimină toate (%s)"
+
+msgid "%s selected option not visible"
+msgid_plural "%s selected options not visible"
+msgstr[0] "%s opțiune selectată nu este vizibilă"
+msgstr[1] "%s opțiuni selectate nu sunt vizibile"
+msgstr[2] "%s de opțiuni selectate nu sunt vizibile"
+
+msgid "You have selected an action, and you haven’t made any changes on individual fields. You’re probably looking for the Run button rather than the Save button."
+msgstr "Ați selectat o acțiune și nu ați modificat niciun câmp individual. Probabil căutați butonul Execută, nu butonul Salvează."
+
+msgid "server"
+msgstr "server"
+
+msgid "Note: Enter times in the %(timezone)s timezone. (You are %(offset)s hour ahead.)"
+msgid_plural "Note: Enter times in the %(timezone)s timezone. (You are %(offset)s hours ahead.)"
+msgstr[0] "Notă: introduceți orele în fusul orar %(timezone)s. (Sunteți cu %(offset)s oră înainte.)"
+msgstr[1] "Notă: introduceți orele în fusul orar %(timezone)s. (Sunteți cu %(offset)s ore înainte.)"
+msgstr[2] "Notă: introduceți orele în fusul orar %(timezone)s. (Sunteți cu %(offset)s de ore înainte.)"
+
+msgid "Note: Enter times in the %(timezone)s timezone. (You are %(offset)s hour behind.)"
+msgid_plural "Note: Enter times in the %(timezone)s timezone. (You are %(offset)s hours behind.)"
+msgstr[0] "Notă: introduceți orele în fusul orar %(timezone)s. (Sunteți cu %(offset)s oră în urmă.)"
+msgstr[1] "Notă: introduceți orele în fusul orar %(timezone)s. (Sunteți cu %(offset)s ore în urmă.)"
+msgstr[2] "Notă: introduceți orele în fusul orar %(timezone)s. (Sunteți cu %(offset)s de ore în urmă.)"
+
+msgid "Today (%(date)s)"
+msgstr "Astăzi (%(date)s)"
+
+msgid "Yesterday (%(date)s)"
+msgstr "Ieri (%(date)s)"
+
+msgid "Tomorrow (%(date)s)"
+msgstr "Mâine (%(date)s)"
+
+msgid "Previous (%(month)s %(year)s)"
+msgstr "Luna anterioară (%(month)s %(year)s)"
+
+msgid "Next (%(month)s %(year)s)"
+msgstr "Luna următoare (%(month)s %(year)s)"
+
+msgctxt "abbrev. month January"
+msgid "Jan"
+msgstr "ian"
+
+msgctxt "abbrev. month February"
+msgid "Feb"
+msgstr "feb"
+
+msgctxt "abbrev. month March"
+msgid "Mar"
+msgstr "mar"
+
+msgctxt "abbrev. month April"
+msgid "Apr"
+msgstr "apr"
+
+msgctxt "abbrev. month May"
+msgid "May"
+msgstr "mai"
+
+msgctxt "abbrev. month June"
+msgid "Jun"
+msgstr "iun"
+
+msgctxt "abbrev. month July"
+msgid "Jul"
+msgstr "iul"
+
+msgctxt "abbrev. month August"
+msgid "Aug"
+msgstr "aug"
+
+msgctxt "abbrev. month September"
+msgid "Sep"
+msgstr "sep"
+
+msgctxt "abbrev. month October"
+msgid "Oct"
+msgstr "oct"
+
+msgctxt "abbrev. month November"
+msgid "Nov"
+msgstr "nov"
+
+msgctxt "abbrev. month December"
+msgid "Dec"
+msgstr "dec"
+
+msgid "Sunday"
+msgstr "Duminică"
+
+msgid "Monday"
+msgstr "Luni"
+
+msgid "Tuesday"
+msgstr "Marți"
+
+msgid "Wednesday"
+msgstr "Miercuri"
+
+msgid "Thursday"
+msgstr "Joi"
+
+msgid "Friday"
+msgstr "Vineri"
+
+msgid "Saturday"
+msgstr "Sâmbătă"
+
+msgctxt "abbrev. day Sunday"
+msgid "Sun"
+msgstr "Dum"
+
+msgctxt "abbrev. day Monday"
+msgid "Mon"
+msgstr "Lun"
+
+msgctxt "abbrev. day Tuesday"
+msgid "Tue"
+msgstr "Mar"
+
+msgctxt "abbrev. day Wednesday"
+msgid "Wed"
+msgstr "Mie"
+
+msgctxt "abbrev. day Thursday"
+msgid "Thur"
+msgstr "Joi"
+
+msgctxt "abbrev. day Friday"
+msgid "Fri"
+msgstr "Vin"
+
+msgctxt "abbrev. day Saturday"
+msgid "Sat"
+msgstr "Sâm"
+
+msgid "%(month)s %(day)s, %(year)s"
+msgstr "%(day)s %(month)s %(year)s"
+
+msgid "%s (today, current selection)"
+msgstr "%s (astăzi, selecția curentă)"
+
+msgid "%s (today)"
+msgstr "%s (astăzi)"
+
+msgid "%s (current selection)"
+msgstr "%s (selecția curentă)"

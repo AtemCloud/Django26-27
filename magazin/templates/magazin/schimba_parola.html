@@ -1,0 +1,7 @@
+{% extends "magazin/baza.html" %}
+{# Lab 6: schimbarea parolei #}
+{% block title %}Schimba parola{% endblock %}
+{% block content %}
+<h1>Schimba parola</h1>
+<form method="post" class="formular">{% csrf_token %}{% include "magazin/_form.html" %}<button class="buton">Schimba parola</button></form>
+{% endblock %}

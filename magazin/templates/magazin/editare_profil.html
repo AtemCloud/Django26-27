@@ -1,0 +1,12 @@
+{% extends "magazin/baza.html" %}
+{# Lab 6: modificarea datelor din Utilizator si Profil #}
+{% block title %}Editare date{% endblock %}
+{% block content %}
+<h1>Modifica datele</h1>
+<form method="post" class="formular">
+    {% csrf_token %}
+    <fieldset><legend>Cont</legend>{% include "magazin/_form.html" with form=form_cont %}</fieldset>
+    <fieldset><legend>Profil</legend>{% include "magazin/_form.html" with form=form_profil %}</fieldset>
+    <button class="buton">Salveaza</button>
+</form>
+{% endblock %}

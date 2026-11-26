@@ -1,0 +1,27 @@
+{% extends "magazin/baza.html" %}
+{# Lab 6: pagina de profil; datele sunt citite din SESIUNE (request.session["date_utilizator"]) #}
+{% block title %}Profil{% endblock %}
+{% block content %}
+<h1>Profilul meu</h1>
+<p class="ajutor">Datele de mai jos sunt citite din sesiune.</p>
+<dl class="detalii">
+    <dt>Nume utilizator</dt><dd>{{ date.username }}</dd>
+    <dt>Nume</dt><dd>{{ date.nume }}</dd>
+    <dt>Prenume</dt><dd>{{ date.prenume }}</dd>
+    <dt>E-mail</dt><dd>{{ date.email }}</dd>
+    <dt>Telefon</dt><dd>{{ date.telefon|default:"-" }}</dd>
+    <dt>Data nasterii</dt><dd>{{ date.data_nasterii|default:"-" }}</dd>
+    <dt>Oras</dt><dd>{{ date.oras|default:"-" }}</dd>
+</dl>
+{% if date.profil %}
+<h2>Profil</h2>
+<dl class="detalii">
+    <dt>Judet</dt><dd>{{ date.profil.judet|default:"-" }}</dd>
+    <dt>Strada</dt><dd>{{ date.profil.strada|default:"-" }}</dd>
+    <dt>Cod postal</dt><dd>{{ date.profil.cod_postal|default:"-" }}</dd>
+    <dt>Newsletter</dt><dd>{{ date.profil.newsletter|yesno:"da,nu" }}</dd>
+</dl>
+{% else %}<p>Nu ai completat inca profilul.</p>{% endif %}
+<p><a class="buton" href="{% url 'editare_profil' %}">Modifica datele</a>
+   <a class="buton secundar" href="{% url 'schimba_parola' %}">Schimba parola</a></p>
+{% endblock %}

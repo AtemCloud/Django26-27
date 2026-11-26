@@ -1,0 +1,34 @@
+{% extends "magazin/baza.html" %}
+{% load static %}
+{# Lab 5 Task 3: formularul de contact; comportamentul din browser e in static/magazin/js/contact.js #}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<h1>Contact</h1>
+<form method="post" enctype="multipart/form-data" class="formular" id="form-contact" data-api="{% url 'api_departamente' %}">
+    {% csrf_token %}
+    {% for e in form.non_field_errors %}<p class="eroare-form">{{ e }}</p>{% endfor %}
+    {{ form.cod_cerere }}{% for e in form.cod_cerere.errors %}<p class="eroare-form">{{ e }}</p>{% endfor %}
+    <div class="rand">{% include "magazin/_camp.html" with field=form.nume %}{% include "magazin/_camp.html" with field=form.prenume %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.cnp %}<span id="contor-cnp" class="contor">0/13 cifre</span></div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.data_nasterii %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.email %}{% include "magazin/_camp.html" with field=form.confirmare_email %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.telefon %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.tip_mesaj %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.departament %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.subiect %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.minim_zile_asteptare %}</div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.mesaj %}</div>
+    <div class="rand imagini">
+        {% include "magazin/_camp.html" with field=form.imagine1 %}
+        {% include "magazin/_camp.html" with field=form.imagine2 %}
+        {% include "magazin/_camp.html" with field=form.imagine3 %}
+        <p id="max-imagini" class="ajutor" hidden>Ati atins numarul maxim de 3 imagini.</p>
+    </div>
+    <div class="rand">{% include "magazin/_camp.html" with field=form.gdpr %}</div>
+    <div class="rand">
+        <button type="submit" class="buton" id="trimite-contact">Trimite</button>
+        <button type="reset" class="buton secundar">Reseteaza</button>
+    </div>
+</form>
+{% endblock %}
+{% block scripts %}<script src="{% static 'magazin/js/contact.js' %}"></script>{% endblock %}

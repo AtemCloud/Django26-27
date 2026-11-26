@@ -1,0 +1,17 @@
+{% extends "magazin/baza.html" %}
+{% load static %}
+{# Lab 2: pagina despre, minim 2 sectiuni (misiune, echipa) + imagine din static #}
+{% block title %}Despre{% endblock %}
+{% block content %}
+<h1>Despre noi</h1>
+<img class="imagine-lata" src="{% static 'magazin/imagini/despre.jpg' %}" alt="Echipa noastra">
+<section id="misiune">
+    <h2>Misiune</h2>
+    <p>Din {{ firma.an_infiintare }} ajutam gamerii, studentii si firmele sa gaseasca piesele potrivite la un pret corect.
+    Testam produsele pe care le vindem si oferim consultanta gratuita pentru configuratii.</p>
+</section>
+<section id="echipa">
+    <h2>Echipa</h2>
+    <p>Suntem o echipa de tehnicieni si pasionati de hardware, impartiti in departamente de vanzari, service, comenzi si calitate.</p>
+</section>
+{% endblock %}

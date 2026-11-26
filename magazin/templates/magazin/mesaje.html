@@ -1,0 +1,23 @@
+{% extends "magazin/baza.html" %}
+{% load magazin_extra %}
+{# Lab 5 Task 3: /mesaje; afiseaza toate cheile din JSON (nu depinde de numele campurilor), mesajele urgente au chenar rosu, fiecare tip de mesaj are alta culoare (stil.css .tip-*) #}
+{% block title %}Mesaje{% endblock %}
+{% block content %}
+<h1>Mesaje nerezolvate</h1>
+<form method="get" class="formular inline">
+    <select name="departament">{% for d in departamente %}<option {% if d == departament %}selected{% endif %}>{{ d }}</option>{% endfor %}</select>
+    <input name="data" value="{{ data }}" placeholder="AAAA sau AAAA-LL sau AAAA-LL-ZZ">
+    <button class="buton">Afiseaza</button>
+</form>
+{% for m in lista %}
+<article class="mesaj-contact tip-{{ m.tip_mesaj }}{% if m.urgent %} urgent{% endif %}">
+    <h3>{% if m.urgent %}<i class="fa-solid fa-bolt"></i> URGENT &middot; {% endif %}{{ m.subiect }}</h3>
+    <dl class="detalii">
+        {% for cheie, valoare in m.items %}{% if cheie != "subiect" and cheie != "_fisier" %}
+        <dt>{{ cheie }}</dt><dd>{% if cheie == "mesaj" %}{{ valoare }}{% elif valoare is None or valoare == "" %}-{% else %}{{ valoare }}{% endif %}</dd>
+        {% endif %}{% endfor %}
+    </dl>
+    <small>{{ m|get_item:"_fisier" }}</small>
+</article>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,29 @@
+/* Lab 2: meniu derulant cu submeniuri + responsive */
+header {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    background: #1a202c; color: #fff; padding: 0 1.5rem; position: sticky; top: 0; z-index: 10;
+}
+.sigla { color: #fff; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+.sigla img { height: 36px; }
+#meniu-toggle, .meniu-buton { display: none; }
+.meniu { list-style: none; margin: 0; padding: 0; display: flex; }
+.meniu > li { position: relative; }
+.meniu a { display: block; padding: 1rem; color: #e2e8f0; text-decoration: none; white-space: nowrap; }
+.meniu a:hover { background: #2d3748; color: #fff; }
+.meniu ul {
+    list-style: none; margin: 0; padding: 0; position: absolute; left: 0; top: 100%; min-width: 220px;
+    background: #2d3748; box-shadow: 0 6px 12px rgba(0,0,0,.3);
+    transform: scaleY(0); transform-origin: top; transition: transform .2s ease; z-index: 20;
+}
+.meniu li:hover > ul, .meniu li:focus-within > ul { transform: scaleY(1); }
+.meniu ul a { padding: .6rem 1rem; }
+.meniu ul a:hover { background: #4a5568; }
+
+@media (max-width: 900px) {
+    .meniu-buton { display: block; font-size: 1.5rem; cursor: pointer; padding: 1rem; }
+    nav { width: 100%; display: none; }
+    #meniu-toggle:checked ~ nav { display: block; }
+    .meniu { flex-direction: column; }
+    .meniu ul { position: static; transform: none; display: none; box-shadow: none; padding-left: 1rem; }
+    .meniu li:hover > ul { display: block; }
+}

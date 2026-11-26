@@ -1,0 +1,29 @@
+{% extends "magazin/baza.html" %}
+{% load static %}
+{# Lab 4 + Lab 5: ACELASI template pentru toate produsele si pentru paginile categoriilor. Formularul de filtrare (Lab 5 Task 2) + zona de produse (_zona_produse.html), reincarcata prin fetch (bonus) #}
+{% block title %}{% if categorie %}{{ categorie.nume }}{% else %}Produse{% endif %}{% endblock %}
+{% block content %}
+{% if categorie %}
+<section class="antet-categorie" style="--culoare-categ: {{ categorie.culoare }}">
+    <h1><i class="{{ categorie.sigla }}"></i> {{ categorie.nume }}</h1>
+    <p>{{ categorie.descriere }}</p>
+</section>
+{% else %}
+<h1>Toate produsele</h1>
+{% endif %}
+
+<details class="filtre" {% if form.is_bound %}open{% endif %}>
+    <summary><i class="fa-solid fa-filter"></i> Filtre</summary>
+    <form id="form-filtre" method="get" action="">
+        <div class="grila-filtre">{% include "magazin/_form.html" %}</div>
+        <input type="hidden" name="coloana" value="{{ coloana }}">
+        <input type="hidden" name="sort" value="{{ sens }}">
+        {% for t in taguri_active %}<input type="hidden" name="tag" value="{{ t }}">{% endfor %}
+        <button type="submit" class="buton">Filtreaza</button>
+        <button type="button" class="buton secundar" id="reset-filtre" data-url="{{ request.path }}">Reseteaza filtrele</button>
+    </form>
+</details>
+
+<div id="zona-produse">{% include "magazin/_zona_produse.html" %}</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'magazin/js/produse.js' %}"></script>{% endblock %}

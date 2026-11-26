@@ -1,0 +1,10 @@
+{% extends "magazin/baza.html" %}
+{# Lab 4: pagina de eroare pentru produs inexistent #}
+{% block title %}Pagina inexistenta{% endblock %}
+{% block content %}
+<section class="eroare-pagina">
+    <h1>Eroare 404</h1>
+    <p>Pagina sau produsul cautat nu exista.</p>
+    <a class="buton" href="{% url 'produse' %}">Inapoi la produse</a>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "magazin/baza.html" %}
+{% load magazin_extra %}
+{# Lab 2 Task 1: /log; logica parametrilor e in views.py, functia log #}
+{% block title %}Log{% endblock %}
+{% block content %}
+<h1>Log accesari</h1>
+<section>
+    <h2>Parametri</h2>
+    <p>Pagina a primit {{ parametri|length }} parametri{% if parametri %}: {{ parametri|join:", " }}{% endif %}.</p>
+</section>
+{% if numar_accesari is not None %}
+<section><h2>Numar accesari</h2><p>De la pornirea serverului au fost {{ numar_accesari }} accesari.</p></section>
+{% endif %}
+
+{% if coloane_tabel %}
+<table class="tabel">
+    <tr>{% for c in coloane_tabel %}<th>{{ c }}</th>{% endfor %}</tr>
+    {% for r in randuri_tabel %}<tr>{% for c in coloane_tabel %}<td>{{ r|get_item:c }}</td>{% endfor %}</tr>{% endfor %}
+</table>
+{% else %}
+<ul>
+    {% for a in accesari %}
+    <li><a href="{% url 'accesare' a.id %}">#{{ a.id }}</a> {{ a.string_url }}
+        {% if detalii %}<ul><li>{{ a.data_formatata }} {{ a.data|time:"H:i:s" }}</li></ul>{% endif %}</li>
+    {% empty %}<li>Nicio accesare.</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% for e in erori %}<p class="eroare-form">{{ e }}</p>{% endfor %}
+{% if cea_mai_accesata %}
+<p>Cea mai accesata pagina: <b>{{ cea_mai_accesata.0 }}</b> ({{ cea_mai_accesata.1 }} accesari).
+Cea mai putin accesata: <b>{{ cea_mai_putin_accesata.0 }}</b> ({{ cea_mai_putin_accesata.1 }}).</p>
+{% endif %}
+{% endblock %}

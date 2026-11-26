@@ -1,0 +1,44 @@
+{% extends "magazin/baza.html" %}
+{% load static %}
+{# Lab 4: pagina proprie a produsului + sectiunea "Produse din aceeasi categorie" #}
+{% block title %}{{ produs.nume }}{% endblock %}
+{% block content %}
+<article class="detaliu-produs" style="--culoare-categ: {{ produs.categorie.culoare }}">
+    <div class="imagine">
+        {% if produs.imagine %}<img src="{{ produs.imagine.url }}" alt="{{ produs.nume }}">
+        {% else %}<img src="{% static 'magazin/imagini/imagine_indisponibila.svg' %}" alt="imagine indisponibila">{% endif %}
+    </div>
+    <div>
+        <a class="categorie-eticheta" href="{{ produs.categorie.get_absolute_url }}"><i class="{{ produs.categorie.sigla }}"></i> {{ produs.categorie.nume }}</a>
+        <h1>{{ produs.nume }}</h1>
+        <p class="pret">{{ produs.pret_curent }} lei</p>
+        <p>{{ produs.descriere }}</p>
+        <table class="tabel">
+            <tr><th>Brand</th><td>{{ produs.brand.nume }} ({{ produs.brand.tara_origine }}){% if produs.brand.url_suport_drivere %} &middot; <a href="{{ produs.brand.url_suport_drivere }}" target="_blank" rel="noopener">drivere</a>{% endif %}</td></tr>
+            <tr><th>Stare</th><td>{{ produs.get_stare_display }}</td></tr>
+            <tr><th>Stoc online</th><td>{{ produs.stoc_online }}{% if produs.stoc_limitat %} <span class="badge-stoc">stoc limitat</span>{% endif %}</td></tr>
+            <tr><th>Consum</th><td>{{ produs.consum_w|default:"-" }}{% if produs.consum_w %} W{% endif %}</td></tr>
+            <tr><th>Lansat</th><td>{{ produs.data_lansare|date:"F Y"|default:"-" }}</td></tr>
+            <tr><th>Interfete</th><td>{{ produs.interfete_conectare|join:", "|default:"-" }}</td></tr>
+            <tr><th>Servicii</th><td>{% for s in produs.servicii.all %}{{ s.nume }} ({{ s.tarif|floatformat:2 }} lei){% if not forloop.last %}, {% endif %}{% empty %}-{% endfor %}</td></tr>
+            <tr><th>Adaugat</th><td>{{ produs.data_adaugare|date:"d.m.Y H:i" }}</td></tr>
+        </table>
+        {% if produs.taguri %}<p class="taguri">{% for t in produs.taguri %}<a href="{% url 'produse' %}?tag={{ t|urlencode }}">#{{ t }}</a> {% endfor %}</p>{% endif %}
+        {% with istoric=produs.istoric_preturi.all %}{% if istoric %}
+        <h2>Istoric pret</h2>
+        <ul>{% for i in istoric %}<li>{{ i.data_aplicare|date:"d.m.Y" }}: {{ i.valoare_pret }} lei</li>{% endfor %}</ul>
+        {% endif %}{% endwith %}
+    </div>
+</article>
+<section>
+    <h2>Produse din aceeași categorie</h2>
+    <div class="grila grila-4">
+    {% for p in similare %}
+        <a class="mini-produs" href="{{ p.get_absolute_url }}">
+            {% if p.imagine %}<img src="{{ p.imagine.url }}" alt="{{ p.nume }}">{% else %}<img src="{% static 'magazin/imagini/imagine_indisponibila.svg' %}" alt="imagine indisponibila">{% endif %}
+            <span>{{ p.nume }}</span><b>{{ p.pret_curent }} lei</b>
+        </a>
+    {% empty %}<p>Nu exista alte produse in aceasta categorie.</p>{% endfor %}
+    </div>
+</section>
+{% endblock %}

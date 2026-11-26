@@ -1,0 +1,9 @@
+{# Curs 5: afisarea unui formular parcurgand campurile lui cu {% for field in form %} #}
+{% for error in form.non_field_errors %}<p class="eroare-form">{{ error }}</p>{% endfor %}
+{% for field in form %}
+    {% if field.is_hidden %}
+        {{ field }}{% for error in field.errors %}<p class="eroare-form">{{ error }}</p>{% endfor %}
+    {% else %}
+        {% include "magazin/_camp.html" %}
+    {% endif %}
+{% endfor %}

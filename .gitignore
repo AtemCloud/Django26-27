@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+venv/
+.venv/
+logs/
+db.sqlite3
+backup_*.sql
+magazin/Mesaje_nerezolvate/
+media/*
+!media/produse/
+.neon
+node_modules/
+.env.local
+_de_sters/
